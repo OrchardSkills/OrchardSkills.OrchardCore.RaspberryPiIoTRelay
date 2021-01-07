@@ -1,0 +1,33 @@
+
+<br />
+<!-- Background image -->
+<div class="p-5 text-center bg-image" style="
+      background-color: black;
+      height: 100vh;
+    ">
+    @if (@ViewBag.LedState == "On")
+    {
+        <img class="light-off-on-img" src="/RaspberryPiTheme/img/light-on.png" alt="">
+    }
+    @if (@ViewBag.LedState == "Off")
+    {
+        <img class="light-off-on-img" src="/RaspberryPiTheme/img/light-off.png" alt="">
+    }
+
+
+    <img src="" alt="">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3">Raspberry Pi IoT Relay</h1>
+                <h4 class="mb-3">Led device supported <strong>@ViewBag.LedSupported</strong></h4>
+                <h4 class="mb-3">Led is <strong>@ViewBag.LedState</strong></h4>
+
+                <a class="btn btn-outline-success btn-lg" asp-action="LedOn">Turn on</a> |
+                <a class="btn btn-outline-danger btn-lg" asp-action="LedOff">Turn off</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Background image -->
